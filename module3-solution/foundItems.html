@@ -1,0 +1,9 @@
+<div></div><div><br><br>
+  <h3 ng-if="found.length>0">Search Results</h3>
+  <ul>
+    <li ng-repeat="item in found">
+      {{item.name}}, {{item.short_name}}, {{item.description}}
+      <button ng-click='onRemove({index: $index});'>Don't want this one!</button>
+    </li>
+  </ul>
+</div>
