@@ -1,0 +1,6 @@
+<div ng-if="'home.categories' | isState">
+  <categories list=catList.items></categories>
+</div>
+<div ng-if="'home.items' | isState">
+  <items list=itemList.items category=itemList.category></items>
+</div>

@@ -1,0 +1,9 @@
+<div>Welcome to our Restaurant!</div>
+
+<a ui-sref="home">Home</a>
+<span ng-if="('home.categories' | isState) || ('home.items' | isState)"> &lt; <a ui-sref=home.categories>Categories</a></span>
+<span ng-if="'home.items' | isState"> &lt; <span>Items</span></span>
+<br><br>
+
+<a ng-if="'home' | isState" ui-sref="home.categories">View Menu By Category</a>
+<ui-view></ui-view>
