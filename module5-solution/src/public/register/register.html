@@ -1,0 +1,70 @@
+<div class="container">
+
+<h1>Sign Up For Our Newsletter!</h1>
+
+    <fieldset>
+      <legend>Registration</legend>
+      <form name='regForm' novalidate>
+
+        First Name
+        <input type="text" class="form-input" name="firstname" placeholder="Enter your first name"
+          ng-model="regCtrl.user.firstname"
+          required>
+          <span
+            ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
+            First Name is required.
+          </span>
+          <br>
+
+        Last Name
+        <input type="text" class="form-input" name="lastname" placeholder="Enter your last name"
+          ng-model="regCtrl.user.lastname"
+          required>
+          <span
+            ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
+            Last Name is required
+          </span>
+          <br>
+
+        Email
+        <input type="email" class="form-input" name="email" placeholder="Email"
+          ng-model="regCtrl.user.email"
+          required>
+          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+
+        Phone Number
+        <input type="text" class="form-input" name="phone" placeholder="Phone ###-###-####"
+          ng-model="regCtrl.user.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+
+        Favorite Menu Item
+        <input type="text" class="form-input" name="favdish" placeholder="Menu Item Number e.g. A4"
+          ng-model="regCtrl.user.favdish"
+          required>
+          <span
+            ng-if="regForm.favdish.$error.required && regForm.favdish.$touched">
+            You must enter a valid menu item number: A4
+          </span>
+          <span
+            ng-if="regCtrl.invalidItem">
+            No such menu number exists.
+          </span>
+          <br>
+
+        <button class="submit-button"
+          ng-disabled="regForm.$invalid"
+          ng-click="regCtrl.submit()">Submit</button>
+
+          <div ng-if="regCtrl.completed">
+            Your information has been saved.
+          </div>
+      </form>
+    </fieldset>
+</div>

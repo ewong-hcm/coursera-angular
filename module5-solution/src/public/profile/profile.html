@@ -1,0 +1,16 @@
+<div class=container ng-if="profileCtrl.isRegistered">
+  <h2>My Profile</h2>
+  <div>First Name: {{profileCtrl.user.firstname}}</div>
+  <div>Last Name: {{profileCtrl.user.lastname}}</div>
+  <div>Email: {{profileCtrl.user.email}}</div>
+  <div>Phone: {{profileCtrl.user.phone}}</div>
+  <div>
+    Favorite Dish:<br>
+    <menu-item menu-item="profileCtrl.menuItem"></menu-item>
+  </div>
+</div>
+<div class=container ng-hide="profileCtrl.isRegistered">
+  <div>
+    <h3><a ui-sref="public.register">Not Signed Up Yet. Sign up now!</a></h3>
+  </div>
+</div>
